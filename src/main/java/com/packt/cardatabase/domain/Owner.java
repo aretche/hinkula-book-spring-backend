@@ -10,15 +10,16 @@ import java.util.*;
 public class Owner {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long ownerid;
     private String firstname, lastname;
 
     @JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="owner")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<Car> cars;
 
-    public Owner() {}
+    public Owner() {
+    }
 
     public Owner(String firstname, String lastname) {
         super();
@@ -29,18 +30,23 @@ public class Owner {
     public long getOwnerid() {
         return ownerid;
     }
+
     public void setOwnerid(long ownerid) {
         this.ownerid = ownerid;
     }
+
     public String getFirstname() {
         return firstname;
     }
+
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
+
     public String getLastname() {
         return lastname;
     }
+
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
